@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  testt:
+    container_name: testt
+    image: node:lts
+    working_dir: /var/www/html/app/
+    entrypoint: /bin/bash
+    environment:
+      - HOST=0.0.0.0
+    ports:
+      - 3000:3000
+      - 10000:10000
+      - 35729:35729
+    volumes:
+      - ./testt/:/var/www/html/app
+    tty: true
